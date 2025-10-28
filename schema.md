@@ -23,63 +23,60 @@ esame ha il voto
 ### Table: persons
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- name
-- last_name
-- codice fiscale
-- phone
-- address
+- name: VARCHAR(100) NOT NULL
+- last_name: VARCHAR(100) NOT NULL
+- codice fiscale: CHAR(13) NOT NULL
+- phone: CHAR(10) NOT NULL
+- address: VARCHAR(200) NULL
 
 
 ### Table: teachers
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- person_id
+- person_id: FK
+- qualification: VARCHAR(50) NOT NULL
+
 
 
 
 ### Table: students
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- person_id
-- student_number
-- iscriptions
-- graduation-course_id
+- person_id FK
+- student_number: VARCHAR(15)
+- inscriptions
+- graduation-course_id: FK
 
 
 
 ### Table: exams
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- teacher_id
-- student_id
-- course_id
-- grade
+- teacher_id FK
+- student_id FK
+- course_id FK
+- grade: TINYINT NOT NULL
+- date: DATETIME NOT NULL
 
 
 ### Table: departments
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- name
+- name: VARCHAR(100) NOT NULL
 
 
 ### Table: graduation-courses
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- name
-- department_id
+- name: VARCHAR(100) NOT NULL
+- department_id FK
 
 
 ### Table: courses
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- graduation-course_id
-- teacher_id
+- name: VARCHAR(100) NOT NULL
+- graduation-course_id FK
+- teacher_id FK
+- cfu: TINYINT NULL
  
-
-
-
-
-
-### Pivot Table: 
-
-
