@@ -20,57 +20,60 @@ esame ha il voto
 - students
 
 
+### Table: persons
 
+- id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
+- name
+- last_name
+- codice fiscale
+- phone
+- address
 
 
 ### Table: teachers
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- name
-- last_name
-- codice fiscale
+- person_id
 
-- courses
-- exams
-
-- phone
-- address
 
 
 ### Table: students
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
-- name
-- last_name
-- codice fiscale
-
+- person_id
 - student_number
 - iscriptions
-- graduation-course
-- exams-results
+- graduation-course_id
 
-- phone
-- address
 
 
 ### Table: exams
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
+- teacher_id
+- student_id
+- course_id
+- grade
 
 
 ### Table: departments
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
+- name
 
 
 ### Table: graduation-courses
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
+- name
+- department_id
 
 
 ### Table: courses
 
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
+- graduation-course_id
+- teacher_id
  
 
 
