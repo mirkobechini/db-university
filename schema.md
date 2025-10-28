@@ -25,7 +25,7 @@ esame ha il voto
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
 - name: VARCHAR(100) NOT NULL
 - last_name: VARCHAR(100) NOT NULL
-- codice fiscale: CHAR(13) NOT NULL
+- codice_fiscale: CHAR(13) NOT NULL
 - phone: CHAR(10) NOT NULL
 - address: VARCHAR(200) NULL
 
@@ -77,6 +77,16 @@ esame ha il voto
 - id: INT || BIGINT AUTO_INCREMENT NOT NULL UNIQUE PK INDEX
 - name: VARCHAR(100) NOT NULL
 - graduation-course_id FK
-- teacher_id FK
 - cfu: TINYINT NULL
  
+
+### Pivot Table: student-course
+
+- student_id
+- course_id
+
+
+### Pivot Table: teacher-course
+
+- teacher_id
+- course_id
