@@ -69,6 +69,5 @@ SELECT students.name as nome, students.surname as cognome, students.registration
 FROM students
 JOIN exam_student ON students.id = exam_student.student_id
 JOIN exams ON exams.id = exam_student.exam_id
-WHERE vote >= 18
-GROUP BY nome, cognome, matricola, esame
-
+GROUP BY students.id, esame
+HAVING voto >=18
